@@ -1,4 +1,4 @@
 out
 node_modules
 settings.jsonc
-vscode-theme-onedark-c-1.0.0.vsix
+*.vsix

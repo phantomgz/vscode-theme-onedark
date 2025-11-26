@@ -3,29 +3,38 @@ name: Publish Extension
 on:
   push:
     tags:
-      - 'v*' # 当推送如 v1.0.0 的标签时触发
+      - 'v*'
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      
       - uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20 # 建议用较新的 Node 版本
+          registry-url: 'https://registry.npmjs.org'
       
       - run: npm install
-      
-      # 如果你的主题需要构建步骤（如 TypeScript），请取消下面注释
-      # - run: npm run vscode:prepublish
 
-      # 发布到 Open VSX
+      # 1. 显式安装 vsce 工具
+      - run: npm install -g @vscode/vsce
+
+      # 2. 统一打包生成 .vsix 文件
+      # 这会生成一个文件名类似：your-theme-1.0.0.vsix
+      - name: Package Extension
+        run: vsce package
+
+      # 3. 发布到 Open VSX (指定上传刚才生成的 .vsix 文件)
       - name: Publish to Open VSX Registry
         uses: eclipse-cdt-cloud/action-ovsx-publish@v1
         with:
           registry-url: 'https://open-vsx.org'
           token: ${{ secrets.OVSX_PAT }}
+          # 这一行如果不写，它会自动找 .vsix，但为了保险可以通配符匹配
+          package-path: '*.vsix' 
 
-      # 发布到 Visual Studio Marketplace
+      # 4. 发布到 Visual Studio Marketplace (指定上传同一个 .vsix 文件)
       - name: Publish to Visual Studio Marketplace
-        run: npx vsce publish -p ${{ secrets.VSCE_PAT }}
+        run: vsce publish --packagePath *.vsix -p ${{ secrets.VSCE_PAT }}
