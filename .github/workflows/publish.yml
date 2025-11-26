@@ -1,0 +1,31 @@
+name: Publish Extension
+
+on:
+  push:
+    tags:
+      - 'v*' # 当推送如 v1.0.0 的标签时触发
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      
+      - run: npm install
+      
+      # 如果你的主题需要构建步骤（如 TypeScript），请取消下面注释
+      # - run: npm run vscode:prepublish
+
+      # 发布到 Open VSX
+      - name: Publish to Open VSX Registry
+        uses: eclipse-cdt-cloud/action-ovsx-publish@v1
+        with:
+          registry-url: 'https://open-vsx.org'
+          token: ${{ secrets.OVSX_PAT }}
+
+      # 发布到 Visual Studio Marketplace
+      - name: Publish to Visual Studio Marketplace
+        run: npx vsce publish -p ${{ secrets.VSCE_PAT }}
