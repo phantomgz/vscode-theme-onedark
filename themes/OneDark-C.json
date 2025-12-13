@@ -77,6 +77,11 @@
         "peekViewTitle.background": "#1B1D23",
         "peekViewEditor.background": "#1B1D23"
     },
+    "semanticTokenColors": {
+        "memberOperatorOverload": {
+            "foreground": "#ef0eef"
+        }
+    },
     "tokenColors": [
         {
             "name": "Comment",
@@ -708,13 +713,6 @@
             "settings": {
                 "foreground": "#cccccc",
                 "fontStyle": ""
-            }
-        },
-        {
-            "name": "Member Operator Overload (Semantic)",
-            "scope": "memberOperatorOverload",
-            "settings": {
-                "foreground": "#9b1ec4"
             }
         },
         {
