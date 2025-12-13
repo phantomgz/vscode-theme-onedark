@@ -658,7 +658,7 @@
             }
         },
         {
-            "name": "JSON \u652f\u6301\u7c7b\u578b\u5c5e\u6027\u540d",
+            "name": "JSON 支持类型属性名",
             "scope": [
                 "support.type.property-name.json.comments"
             ],
@@ -668,7 +668,7 @@
             }
         },
         {
-            "name": "\u5173\u952e\u5b57\u4e0e\u64cd\u4f5c\u7b26",
+            "name": "关键字与操作符",
             "scope": [
                 "keyword.control",
                 "keyword.operator.c",
@@ -711,7 +711,14 @@
             }
         },
         {
-            "name": "\u5185\u7f6e\u7c7b\u578b",
+            "name": "Member Operator Overload (Semantic)",
+            "scope": "memberOperatorOverload",
+            "settings": {
+                "foreground": "#980ec6"
+            }
+        },
+        {
+            "name": "内置类型",
             "scope": [
                 "storage.modifier",
                 "storage.type",
@@ -723,7 +730,7 @@
             }
         },
         {
-            "name": "\u7c7b, \u7ed3\u6784\u4f53, \u547d\u540d\u7a7a\u95f4",
+            "name": "类, 结构体, 命名空间",
             "scope": [
                 "entity.name.namespace",
                 "entity.name.type"
@@ -734,7 +741,7 @@
             }
         },
         {
-            "name": "\u5b57\u7b26\u4e32",
+            "name": "字符串",
             "scope": [
                 "constant.character",
                 "constant.character.escape",
@@ -751,7 +758,7 @@
             }
         },
         {
-            "name": "\u53c2\u6570",
+            "name": "参数",
             "scope": [
                 "variable.parameter"
             ],
@@ -761,7 +768,7 @@
             }
         },
         {
-            "name": "\u5c40\u90e8\u53d8\u91cf",
+            "name": "局部变量",
             "scope": [
                 "variable.other.local",
                 "variable.other.member",
@@ -773,7 +780,7 @@
             }
         },
         {
-            "name": "\u5168\u5c40\u53d8\u91cf",
+            "name": "全局变量",
             "scope": [
                 "variable.other.global"
             ],
@@ -783,7 +790,7 @@
             }
         },
         {
-            "name": "\u9759\u6001\u53d8\u91cf",
+            "name": "静态变量",
             "scope": [
                 "variable.other.readwrite.static"
             ],
@@ -793,7 +800,7 @@
             }
         },
         {
-            "name": "\u9759\u6001\u51fd\u6570",
+            "name": "静态函数",
             "scope": [
                 "entity.name.function.member.static"
             ],
@@ -802,7 +809,7 @@
             }
         },
         {
-            "name": "\u6210\u5458\u53d8\u91cf",
+            "name": "成员变量",
             "scope": [
                 "variable.other.property"
             ],
@@ -812,7 +819,7 @@
             }
         },
         {
-            "name": "\u9884\u5904\u7406\u5668",
+            "name": "预处理器",
             "scope": [
                 "entity.name.function.preprocessor",
                 "keyword.control.directive",
