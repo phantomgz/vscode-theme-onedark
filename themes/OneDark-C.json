@@ -80,7 +80,8 @@
     "semanticTokenColors": {
         "memberOperatorOverload": {
             "foreground": "#ef0eef"
-        }
+        },
+        "memberOperator": "#ef0eef"
     },
     "tokenColors": [
         {

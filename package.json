@@ -2,7 +2,7 @@
     "name": "vscode-theme-onedark-c",
     "displayName": "Atom One Dark C/C++ Theme",
     "description": "One Dark Theme optimized for C/C++ development",
-    "version": "1.2.3",
+    "version": "1.2.5",
     "publisher": "phantomgz",
     "license": "MIT",
     "galleryBanner": {
