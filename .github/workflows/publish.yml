@@ -4,6 +4,17 @@ on:
   push:
     tags:
       - 'v*'
+  workflow_dispatch:
+    inputs:
+      target:
+        description: 'Publish target'
+        required: true
+        default: 'both'
+        type: choice
+        options:
+        - both
+        - openvsx
+        - marketplace
 
 jobs:
   build:
@@ -28,8 +39,10 @@ jobs:
 
       # 3. 发布到 Open VSX (使用 npx 直接运行命令，最稳定)
       - name: Publish to Open VSX Registry
+        if: ${{ github.event.inputs.target == 'both' || github.event.inputs.target == 'openvsx' || github.event.inputs.target == '' }}
         run: npx ovsx publish *.vsix -p ${{ secrets.OVSX_PAT }}
 
       # 4. 发布到 Visual Studio Marketplace
       - name: Publish to Visual Studio Marketplace
+        if: ${{ github.event.inputs.target == 'both' || github.event.inputs.target == 'marketplace' }}
         run: vsce publish --packagePath *.vsix -p ${{ secrets.VSCE_PAT }}
