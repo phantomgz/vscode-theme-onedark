@@ -1,5 +1,20 @@
 The best rated One Dark port now includes Workbench theming!
 
+## Version 1.2.6
+* Improve publishing workflow with selective target deployment
+* Add support for publishing to Open VSX Registry independently
+* Add workflow dispatch for manual triggering of publishing jobs
+
+## Version 1.2.5
+* Optimize theme for C/C++ development
+* Update README with accurate extension information
+* Fix minor color inconsistencies
+
+## Version 1.2.4
+* Initial release as phantomgz fork
+* Customize for C/C++ focused development
+* Update package metadata and publisher information
+
 ## Version 2.3.0
 * Provide inlayHints colors
 * Fix Notebooks selection colors

@@ -673,6 +673,55 @@
                 "fontStyle": ""
             }
         },
+        // Shell
+        {
+            "scope": "variable.other.normal.shell",
+            "settings": {
+                "foreground": "#F0F727"
+            }
+        },
+        {
+            "scope": "variable.other.assignment.shell",
+            "settings":
+            {
+                "foreground": "#df27f7",
+                "fontStyle": "bold"
+            }
+        },
+        {
+            "scope": "keyword.operator.logical.shell",
+            "settings": {
+                "foreground": "#cccccc",
+                "fontStyle": "bold"
+            }
+        },
+        {
+            "scope": "support.function.builtin.shell",
+            "settings": {
+                "foreground": "#cccc",
+                "fontStyle": "underline"
+            }
+        },        
+        // XML
+        {
+            "name": "XML name.tag.localname.xml",
+            "scope": [
+                "entity.name.tag.localname.xml"
+            ],
+            "settings": {
+                "foreground": "#569CD6"
+            }
+        },
+        {
+            "name": "XML entity.other.attribute-name.localname.xml",
+            "scope": [
+                "entity.other.attribute-name.localname.xml"
+            ],
+            "settings": {
+                "foreground": "#fcfc38",
+            }
+        },
+        // C/C++
         {
             "name": "关键字与操作符",
             "scope": [
