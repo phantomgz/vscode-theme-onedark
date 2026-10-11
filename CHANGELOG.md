@@ -1,5 +1,19 @@
 The best rated One Dark port now includes Workbench theming!
 
+## Version 1.3.1
+* Change JSON key and property name color to `#CCCCCC`
+* Change C++ `this` keyword color to `#CCCCCC`
+
+## Version 1.3.0
+* Add full clangd semantic highlighting support (`semanticTokenColors`)
+* Enable `semanticHighlighting: true` in theme
+* Semantic token mappings for: namespace, class, struct, enum, type, typeParameter, function, method, variable, parameter, property, enumMember, macro, operator
+* Modifier support: globalScope, static, readonly, virtual, abstract, deprecated
+* Static functions/methods shown with underline, virtual/abstract methods in italic
+* Deprecated symbols shown with strikethrough
+* Add `editor.semanticTokenColorCustomizations` example to settings.jsonc
+* All existing TextMate rules preserved for backward compatibility
+
 ## Version 1.2.6
 * Improve publishing workflow with selective target deployment
 * Add support for publishing to Open VSX Registry independently

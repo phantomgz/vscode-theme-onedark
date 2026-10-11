@@ -1,11 +1,7 @@
 .vscode/**
+.github/**
 samples/**
 .gitignore
-tsconfig.json
-vsc-extension-quickstart.md
-Fixing colors.txt
+workflow.md
+settings.jsonc
 screenshots/**
-gulpfile.js
-**/*.psd
-**/*.ai
-themes/OneDark.old.tmTheme

@@ -1,6 +1,7 @@
 {
     "author": "akamud",
     "name": "OneDark-C",
+    "semanticHighlighting": true,
     "colors": {
         "activityBar.background": "#333842",
         "activityBar.foreground": "#D7DAE0",
@@ -81,7 +82,54 @@
         "memberOperatorOverload": {
             "foreground": "#ef0eef"
         },
-        "memberOperator": "#ef0eef"
+        "memberOperator": "#ef0eef",
+        "namespace": "#569cd6",
+        "class": "#32cd32",
+        "struct": "#32cd32",
+        "enum": "#32cd32",
+        "type": "#32cd32",
+        "typeParameter": "#32cd32",
+        "interface": "#32cd32",
+        "function": "#db7312",
+        "method": "#db7312",
+        "variable": "#F0F727",
+        "parameter": {
+            "foreground": "#F0F727",
+            "fontStyle": "underline"
+        },
+        "property": { "foreground": "#fffb00", "fontStyle": "italic" },
+        "enumMember": "#00dddd",
+        "macro": "#0088ff",
+        "operator": "#cccccc",
+        "variable.globalScope": "#df27f7",
+        "variable.static": "#9CDCFE",
+        "property.static": "#9CDCFE",
+        "function.static": {
+            "foreground": "#db7312",
+            "fontStyle": "underline"
+        },
+        "method.static": {
+            "foreground": "#db7312",
+            "fontStyle": "underline"
+        },
+        "variable.readonly": "#00dddd",
+        "property.readonly": "#00dddd",
+        "method.virtual": {
+            "foreground": "#db7312",
+            "fontStyle": "italic"
+        },
+        "method.abstract": {
+            "foreground": "#db7312",
+            "fontStyle": "italic"
+        },
+        "*.deprecated": {
+            "fontStyle": "strikethrough"
+        },
+        "keyword": "#cccccc",
+        "modifier": "#569CD6",
+        "comment": "#999999",
+        "string": "#00dddd",
+        "number": "#00dddd"
     },
     "tokenColors": [
         {
@@ -433,8 +481,6 @@
                 "source.ini keyword.other.definition.ini",
                 "source.java-properties meta.key-pair",
                 "source.js support.variable",
-                "source.json meta.structure.dictionary.json > string.quoted.json",
-                "source.json meta.structure.dictionary.json > string.quoted.json > punctuation.string",
                 "source.ts support.variable",
                 "source.tsx support.variable",
                 "string.other.link",
@@ -442,8 +488,6 @@
                 "support.type.object.module.jsx",
                 "support.type.object.module.ts",
                 "support.type.object.module.tsx",
-                "support.type.property-name.json",
-                "support.type.property-name.json punctuation",
                 "support.variable.dom.js",
                 "support.variable.dom.ts",
                 "support.variable.magic.python",
@@ -664,16 +708,19 @@
             }
         },
         {
-            "name": "JSON 支持类型属性名",
+            "name": "JSON 键名与属性名",
             "scope": [
-                "support.type.property-name.json.comments"
+                "support.type.property-name.json",
+                "support.type.property-name.json punctuation",
+                "support.type.property-name.json.comments",
+                "source.json meta.structure.dictionary.json > string.quoted.json",
+                "source.json meta.structure.dictionary.json > string.quoted.json > punctuation.string"
             ],
             "settings": {
-                "foreground": "#db7312",
+                "foreground": "#FFFB00",
                 "fontStyle": ""
             }
         },
-        // Shell
         {
             "scope": "variable.other.normal.shell",
             "settings": {
@@ -702,7 +749,6 @@
                 "fontStyle": "underline"
             }
         },        
-        // XML
         {
             "name": "XML name.tag.localname.xml",
             "scope": [
@@ -718,10 +764,9 @@
                 "entity.other.attribute-name.localname.xml"
             ],
             "settings": {
-                "foreground": "#fcfc38",
+                "foreground": "#fcfc38"
             }
         },
-        // C/C++
         {
             "name": "关键字与操作符",
             "scope": [
@@ -758,7 +803,8 @@
                 "storage.modifier.c",
                 "storage.modifier.cpp",
                 "punctuation.separator.pointer-access.c",
-                "punctuation.separator.pointer-access.cpp"
+                "punctuation.separator.pointer-access.cpp",
+                "variable.language.this.cpp"
             ],
             "settings": {
                 "foreground": "#cccccc",
@@ -778,13 +824,22 @@
             }
         },
         {
-            "name": "类, 结构体, 命名空间",
+            "name": "类, 结构体",
             "scope": [
-                "entity.name.namespace",
                 "entity.name.type"
             ],
             "settings": {
                 "foreground": "#32cd32",
+                "fontStyle": ""
+            }
+        },
+        {
+            "name": "命名空间",
+            "scope": [
+                "entity.name.namespace"
+            ],
+            "settings": {
+                "foreground": "#569cd6",
                 "fontStyle": ""
             }
         },

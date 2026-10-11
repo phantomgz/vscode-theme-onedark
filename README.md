@@ -5,7 +5,7 @@
 ![Visual Studio Marketplace Downloads](https://img.shields.io/visual-studio-marketplace/d/phantomgz.vscode-theme-onedark-c)
 ![Visual Studio Marketplace Rating](https://img.shields.io/visual-studio-marketplace/r/phantomgz.vscode-theme-onedark-c)
 
-VSCode Theme based on Atom's [One Dark](https://github.com/atom/one-dark-syntax) theme. Optimized for C/C++ development with full Workbench theming.
+VSCode Theme based on Atom's [One Dark](https://github.com/atom/one-dark-syntax) theme. Optimized for C/C++ development with full Workbench theming. Supports both **TextMate** (ms-vscode.cpptools) and **clangd** semantic highlighting.
 
 ![](https://raw.githubusercontent.com/phantomgz/vscode-theme-onedark/master/screenshots/preview.png)
 
@@ -17,27 +17,57 @@ VSCode Theme based on Atom's [One Dark](https://github.com/atom/one-dark-syntax)
 
 This extension is available for free in the [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items/phantomgz.vscode-theme-onedark-c)  
 
-## Looking for the One Light theme?
-
-If you are interested you can also have the One Light theme available [here](https://github.com/phantomgz/vscode-theme-onedark).
-
 ## What's new?
 
-Click here to go to the [Changelog](https://github.com/phantomgz/vscode-theme-onedark/blob/master/CHANGELOG.md)
+See the [Changelog](CHANGELOG.md) for details on the latest updates.
 
-## Inconsistencies?
+## clangd Semantic Highlighting
 
-If you find any inconsistency in any language, raise an Issue and I'll fix it, please provide a sample for the language so I can compare. 
+This theme has built-in support for **clangd semantic tokens**. When using the [clangd extension](https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd), the following C++ elements are semantically highlighted:
 
-**Attention:** If you are using **VSCode 1.43.0**, you must be seeing very different colors, as reported [here](https://github.com/phantomgz/vscode-theme-onedark/issues/119). An update to VSCode will be released fixing this issue for all themes, in the meantime, make sure you set this in your settings:
+| Element | Color | Style |
+|---------|-------|-------|
+| Namespace / Class / Struct / Enum | `#32cd32` (green) | — |
+| Function / Method | `#db7312` (orange) | — |
+| Local Variable | `#F0F727` (yellow) | — |
+| Parameter | `#F0F727` (yellow) | underline |
+| Member Variable (property) | `#fffb00` | — |
+| Global Variable | `#df27f7` (purple) | — |
+| Static Variable | `#9CDCFE` | — |
+| Static Function / Method | `#db7312` (orange) | underline |
+| Virtual / Abstract Method | `#db7312` (orange) | italic |
+| Enum Member | `#00dddd` (cyan) | — |
+| Macro | `#0088ff` (blue) | — |
+| Readonly / const | `#00dddd` (cyan) | — |
+| Deprecated symbol | — | strikethrough |
 
-```json
-"editor.semanticHighlighting.enabled": false
-```
+> **Note:** TextMate rules are fully preserved as a fallback. If you use ms-vscode.cpptools instead of clangd, the theme still works correctly.
+
+## Feedback & Issues
+
+If you find any color inconsistencies or have suggestions for C/C++ semantic highlighting, please [open an issue](https://github.com/phantomgz/vscode-theme-onedark/issues).
 
 ## Customization
 
 If you are using VSCode 1.12+ versions you can customize the colors to your liking, overriding the ones provided by this theme. More info [here](https://code.visualstudio.com/docs/getstarted/theme-color-reference).
+
+### Semantic Token Overrides
+
+To override the semantic token colors in your personal `settings.json`:
+
+```json
+"editor.semanticTokenColorCustomizations": {
+    "[Atom One Dark C/C++]": {
+        "rules": {
+            "class": "#4EC9B0",
+            "variable.static": "#D7BA7D",
+            "method.virtual": { "fontStyle": "italic" }
+        }
+    }
+}
+```
+
+Use **"Developer: Inspect Editor Tokens and Scopes"** (Ctrl+Shift+P) to see the semantic token type and modifiers for any symbol in your code.
 
 ### Custom Font
 
